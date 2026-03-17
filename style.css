@@ -98,3 +98,29 @@ body {
     background: white;
     color: black;
 }
+.logo-img {
+    height: 40px; /* Bescheiden maar krachtig */
+    width: auto;
+    /* De magische touch voor 2026: 
+       Dit zorgt dat het zwarte logo wit wordt op donkere achtergronden */
+    filter: invert(1) brightness(2); 
+}
+
+.navbar {
+    padding: 20px 5%;
+    background: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+}
+
+/* Nav links strakker maken */
+.nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.5; /* Subtiele interactie */
+}
