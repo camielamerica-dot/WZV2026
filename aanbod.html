@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aanbod | Wij zijn Valkenburg 2026</title>
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <title>Collectie | Wij zijn Valkenburg</title>
+    <link rel="stylesheet" href="style.css?v=1.3">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -21,58 +21,78 @@
         </div>
     </nav>
 
-    <main class="container page-top">
-        <header class="page-header">
-            <h1>Onze Collectie.</h1>
-            <p>Filter op basis van uw groepsgrootte, budget en voorkeuren.</p>
-        </header>
+    <header class="aanbod-hero">
+        <div class="container">
+            <span class="badge-white">Onze Collectie</span>
+            <h1>Voor elk doel een<br>uniek programma.</h1>
+        </div>
+    </header>
 
-        <div class="filter-section">
-            <div class="filter-group">
-                <span class="filter-label">Setting</span>
-                <div class="pills">
+    <main class="container">
+        <div class="sticky-filter">
+            <div class="filter-wrapper">
+                <div class="filter-group">
                     <button class="pill active" onclick="filterType('all')">Alles</button>
                     <button class="pill" onclick="filterType('indoor')">Indoor</button>
                     <button class="pill" onclick="filterType('outdoor')">Outdoor</button>
-                </div>
-            </div>
-            
-            <div class="filter-group">
-                <span class="filter-label">Impact</span>
-                <div class="pills">
                     <button class="pill" onclick="filterType('eco')">🌿 Eco-First</button>
                 </div>
             </div>
         </div>
 
         <div class="grid" id="eventGrid">
-            <div class="card indoor eco" data-price="75" data-pax="500">
-                <div class="card-top">10 - 500 PAX | 🌿 ECO</div>
-                <h3>Underground Expedition</h3>
-                <p>Onze specialiteit. Een diepe duik in de historie, volledig klimaatneutraal.</p>
-                <div class="card-price">Vanaf €75 p.p. <span>→</span></div>
+            
+            <div class="event-card-v2 indoor eco">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1000&auto=format&fit=crop" alt="Grotten">
+                    <div class="card-tag">🌿 Eco Choice</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">10 - 500 PAX | Valkenburg Ondergronds</span>
+                    <h3>The Underground Expedition</h3>
+                    <p>Een exclusieve tocht door het onbekende gangenstelsel. Maatwerk op het hoogste niveau.</p>
+                    <div class="card-price-v2">Vanaf €85 p.p. <span class="arrow">→</span></div>
+                </div>
             </div>
 
-            <div class="card outdoor" data-price="120" data-pax="150">
-                <div class="card-top">20 - 150 PAX</div>
-                <h3>Hillside Wine Tasting</h3>
-                <p>Exclusieve proeverij op de zonnigste hellingen van Limburg.</p>
-                <div class="card-price">Vanaf €120 p.p. <span>→</span></div>
+            <div class="event-card-v2 outdoor">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop" alt="Heuvelland">
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">20 - 100 PAX | Lifestyle</span>
+                    <h3>E-Chopper Heuveltour</h3>
+                    <p>Geruisloos door het Limburgse landschap met stops bij de beste lokale wijngaarden.</p>
+                    <div class="card-price-v2">Vanaf €65 p.p. <span class="arrow">→</span></div>
+                </div>
             </div>
+
+            <div class="event-card-v2 indoor">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop" alt="Gala">
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">50 - 250 PAX | Events</span>
+                    <h3>Mergel Dinner Experience</h3>
+                    <p>Dineren aan lange tafels, verlicht door honderden kaarsen in een privé-grot.</p>
+                    <div class="card-price-v2">Vanaf €115 p.p. <span class="arrow">→</span></div>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <script>
         function filterType(type) {
-            const cards = document.querySelectorAll('.card');
+            const cards = document.querySelectorAll('.event-card-v2');
             const pills = document.querySelectorAll('.pill');
             
             pills.forEach(p => p.classList.remove('active'));
-            event.target.classList.add('active');
+            event.currentTarget.classList.add('active');
 
             cards.forEach(card => {
                 if (type === 'all' || card.classList.contains(type)) {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
