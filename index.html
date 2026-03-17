@@ -3,57 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wij zijn Valkenburg | High-end Events & DMC</title>
+    <title>WZV2026 | High-End Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-    <div class="logo">
-        <img src="https://wijzijnvalkenburg.nl/wp-content/uploads/2020/06/Logo_WijzijnValkenburg_zwart.png" alt="Wij zijn Valkenburg" class="logo-img">
-    </div>
-    <ul class="nav-links">
-        <li><a href="#ontdek">Ontdek Valkenburg</a></li>
-        <li><a href="#aanbod">Aanbod</a></li>
-        <li><a href="#types">Type Event</a></li>
-        <li><a href="#over">Over ons</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+        <div class="nav-container">
+            <img src="https://wijzijnvalkenburg.nl/wp-content/uploads/2020/06/Logo_WijzijnValkenburg_zwart.png" alt="Logo" class="logo-img">
+            <ul class="nav-links">
+                <li><a href="#ontdek">Ontdek</a></li>
+                <li><a href="#aanbod">Aanbod</a></li>
+                <li><a href="#types">Types</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+    </nav>
 
-   <header class="hero">
-    <span class="label">Valkenburg 2026</span>
-    <h1>Events,<br>ontworpen voor impact.</h1>
-    <p class="hero-sub">Wij zijn de architecten van high-end teambuilding en incentives. Grafisch strak, operationeel perfect.</p>
-    
-    <div class="hero-actions">
-        <button class="btn-main">Start je aanvraag</button>
-        <button class="btn-sub">Bekijk aanbod</button>
-    </div>
-</header>
-
-<section id="aanbod" class="content-section">
-    <div class="filter-bar">
-        <button class="filter-btn active">Alles</button>
-        <button class="filter-btn">Prijs: €€€</button>
-        <button class="filter-btn">Indoor</button>
-        <button class="filter-btn">Outdoor</button>
-        <button class="filter-btn">🌿 Eco-First</button>
-    </div>
-    
-    <div class="aanbod-grid">
-        <div class="aanbod-card">
-            <span class="pax-label">10 - 500 PAX</span>
-            <h3>Underground Expedition</h3>
-            <p>Een unieke, milieubewuste ontdekkingstocht door de ongeziene gangen van de mergelgrotten.</p>
-            <div class="card-footer">
-                <span class="price">Vanaf €89 p.p.</span>
-                <button class="btn-arrow">→</button>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Valkenburg 2026</span>
+            <h1>Events, opnieuw uitgevonden.</h1>
+            <p>Architecten van zakelijke ontmoetingen. <br>Strak geregeld, grafisch perfect.</p>
+            <div class="hero-btns">
+                <a href="#aanbod" class="btn-black">Bekijk Aanbod</a>
+                <a href="#over" class="btn-link">Wie zijn wij? →</a>
             </div>
         </div>
-    </div>
-</section>
+    </header>
+
+    <section id="ontdek" class="section">
+        <div class="container">
+            <h2 class="section-title">De all-season bestemming.</h2>
+            <div class="season-grid">
+                <div class="season-card">
+                    <div class="season-img" style="background-image: url('https://images.unsplash.com/photo-1544413345-0d4ca0831633?q=80&w=1000&auto=format&fit=crop');"></div>
+                    <div class="season-info">
+                        <h3>Winter</h3>
+                        <p>Ondergronds in de grotten.</p>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-img" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop');"></div>
+                    <div class="season-info">
+                        <h3>Zomer</h3>
+                        <p>Bovengronds in de heuvels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aanbod" class="section grey-bg">
+        <div class="container">
+            <h2 class="section-title">Onze Collectie.</h2>
+            
+            <div class="filter-bar">
+                <button class="filter-pill active">Alles</button>
+                <button class="filter-pill">€€€</button>
+                <button class="filter-pill">Indoor</button>
+                <button class="filter-pill">🌿 Eco</button>
+            </div>
+
+            <div class="aanbod-grid">
+                <div class="event-card">
+                    <span class="pax-tag">10 - 500 PAX</span>
+                    <h3>The Underground Expedition</h3>
+                    <p>Onze specialiteit. Maatwerk in de diepste gangen van de stad.</p>
+                    <div class="card-footer">
+                        <span class="price">Vanaf €75 p.p.</span>
+                        <div class="arrow-circle">→</div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <span class="pax-tag">20 - 150 PAX</span>
+                    <h3>High-End Wine Tasting</h3>
+                    <p>Limburgse luxe op een moderne wijngaard. Focus op kwaliteit.</p>
+                    <div class="card-footer">
+                        <span class="price">Vanaf €120 p.p.</span>
+                        <div class="arrow-circle">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
