@@ -1,92 +1,240 @@
 :root {
-    --primary: #007aff; /* Revolut Blue */
     --bg: #ffffff;
+    --grey-bg: #f5f5f7;
     --text: #000000;
-    --grey-light: #f5f5f7;
-    --grey-dark: #86868b;
-    --radius: 24px;
+    --text-muted: #86868b;
+    --accent: #0071e3; /* Modern blauw accent */
+    --radius-large: 24px;
+    --radius-small: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    font-family: 'Inter', -apple-system, sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
 }
 
-/* Revolut-stijl Navigatie */
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navigatie (Revolut Stijl) */
 .navbar {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 0.5px solid rgba(0,0,0,0.1);
-    padding: 15px 10%;
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 9999;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 0.5px solid rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0 40px;
 }
 
 .logo-img {
-    height: 30px;
-    filter: none; /* We houden het originele logo maar op een witte bar */
+    height: 28px;
+    width: auto;
 }
 
-/* Hero Sectie: Enorme koppen, strakke teksten */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover { opacity: 1; }
+
+.nav-cta {
+    background: var(--text);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Hero Section */
 .hero {
-    padding: 160px 10% 80px 10%;
-    background: var(--bg);
+    padding-top: 180px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--grey-bg);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 24px;
 }
 
 .hero h1 {
-    font-size: 110px;
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.05em;
-    margin-bottom: 40px;
-    color: var(--text);
+    font-size: clamp(40px, 8vw, 100px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 32px;
 }
 
-/* Filter Knoppen (Pills) */
+.hero p {
+    font-size: 20px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 48px auto;
+}
+
+.btn-black {
+    background: var(--text);
+    color: white;
+    padding: 18px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 16px;
+}
+
+.btn-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sections */
+.section { padding: 100px 0; }
+.grey-bg { background-color: var(--grey-bg); }
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 60px;
+}
+
+/* Seasons Grid */
+.season-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.season-card {
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    background: var(--grey-bg);
+}
+
+.season-img {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.season-info { padding: 32px; }
+
+/* Filter Bar */
 .filter-bar {
     display: flex;
     gap: 12px;
     margin-bottom: 40px;
-    overflow-x: auto;
-    padding-bottom: 10px;
 }
 
-.filter-btn {
-    background: var(--grey-light);
+.filter-pill {
+    background: #fff;
     border: none;
-    padding: 12px 24px;
-    border-radius: 40px;
+    padding: 10px 24px;
+    border-radius: 20px;
     font-weight: 600;
-    font-size: 14px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-.filter-btn.active {
+.filter-pill.active {
     background: var(--text);
-    color: white;
+    color: #fff;
 }
 
-/* Aanbod Kaarten */
+/* Event Cards */
 .aanbod-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
 }
 
-.aanbod-card {
-    background: var(--grey-light);
-    border-radius: var(--radius);
+.event-card {
+    background: #fff;
     padding: 40px;
-    transition: transform 0.3s ease;
-    border: 1px solid transparent;
+    border-radius: var(--radius-large);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.aanbod-card:hover {
-    transform: scale(1.02);
-    border: 1px solid rgba(0,0,0,0.05);
+.event-card:hover {
+    transform: translateY(-8px);
+}
+
+.pax-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-card h3 {
+    font-size: 28px;
+    margin: 16px 0;
+}
+
+.event-card p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--grey-bg);
+    padding-top: 24px;
+}
+
+.arrow-circle {
+    width: 44px;
+    height: 44px;
+    background: var(--grey-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
