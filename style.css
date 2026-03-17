@@ -248,3 +248,98 @@ h1 {
 }
 
 .bg-light { background-color: var(--grey-bg); }
+
+/* Aanbod Hero */
+.aanbod-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1445013351711-bc6e2ae51294?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.aanbod-hero h1 { font-size: 80px; line-height: 0.95; letter-spacing: -3px; }
+.badge-white { background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
+
+/* Sticky Filter */
+.sticky-filter {
+    position: sticky;
+    top: 70px;
+    z-index: 90;
+    background: #f5f5f7;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+/* New Event Card Design */
+.event-card-v2 {
+    background: #fff;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.event-card-v2:hover { transform: translateY(-10px); }
+
+.card-img-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.event-card-v2:hover .card-img-wrapper img { transform: scale(1.1); }
+
+.card-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-body { padding: 30px; }
+.card-meta { font-size: 12px; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 1px; }
+.card-body h3 { font-size: 26px; margin: 12px 0; letter-spacing: -0.5px; }
+.card-body p { color: #86868b; font-size: 16px; line-height: 1.5; margin-bottom: 24px; }
+
+.card-price-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    font-size: 18px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.event-card-v2:hover .arrow { transform: rotate(-45deg); }
