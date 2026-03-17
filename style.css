@@ -1,61 +1,103 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #ffffff; color: #000; -webkit-font-smoothing: antialiased; }
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collectie | Wij zijn Valkenburg</title>
+    <link rel="stylesheet" href="style.css?v=1.3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html"><img src="https://wijzijnvalkenburg.nl/wp-content/uploads/2020/06/Logo_WijzijnValkenburg_zwart.png" class="logo"></a>
+            <div class="menu">
+                <a href="index.html">Ontdek</a>
+                <a href="aanbod.html" class="active">Aanbod</a>
+                <a href="#types">Types</a>
+                <a href="#contact" class="cta">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-/* Navbar */
-.navbar { position: fixed; top: 0; width: 100%; height: 70px; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); z-index: 100; border-bottom: 1px solid #f0f0f0; }
-.nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 20px; }
-.logo { height: 25px; }
-.menu a { text-decoration: none; color: #000; margin-left: 25px; font-size: 14px; font-weight: 500; }
-.cta { background: #000; color: #fff !important; padding: 8px 18px; border-radius: 20px; }
+    <header class="aanbod-hero">
+        <div class="container">
+            <span class="badge-white">Onze Collectie</span>
+            <h1>Voor elk doel een<br>uniek programma.</h1>
+        </div>
+    </header>
 
-/* Hero */
-.hero { padding: 180px 0 100px; text-align: center; }
-.badge { background: #f5f5f7; padding: 5px 15px; border-radius: 15px; font-size: 12px; font-weight: 700; margin-bottom: 20px; display: inline-block; }
-.hero h1 { font-size: 90px; line-height: 0.9; letter-spacing: -4px; font-weight: 900; margin-bottom: 30px; }
-.hero p { font-size: 20px; color: #86868b; max-width: 500px; margin: 0 auto 40px; }
-.btn-primary { background: #000; color: #fff; padding: 18px 35px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-right: 15px; display: inline-block; }
-.btn-secondary { background: #f5f5f7; color: #000; padding: 18px 35px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; }
+    <main class="container">
+        <div class="sticky-filter">
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <button class="pill active" onclick="filterType('all')">Alles</button>
+                    <button class="pill" onclick="filterType('indoor')">Indoor</button>
+                    <button class="pill" onclick="filterType('outdoor')">Outdoor</button>
+                    <button class="pill" onclick="filterType('eco')">🌿 Eco-First</button>
+                </div>
+            </div>
+        </div>
 
-/* Aanbod */
-.section { padding: 80px 0; background: #f5f5f7; }
-.title { font-size: 40px; font-weight: 800; margin-bottom: 40px; letter-spacing: -1px; }
-.filter-bar { display: flex; gap: 10px; margin-bottom: 30px; }
-.pill { background: #fff; border: none; padding: 10px 20px; border-radius: 20px; font-weight: 600; cursor: pointer; font-family: inherit; }
-.pill.active { background: #000; color: #fff; }
+        <div class="grid" id="eventGrid">
+            
+            <div class="event-card-v2 indoor eco">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1000&auto=format&fit=crop" alt="Grotten">
+                    <div class="card-tag">🌿 Eco Choice</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">10 - 500 PAX | Valkenburg Ondergronds</span>
+                    <h3>The Underground Expedition</h3>
+                    <p>Een exclusieve tocht door het onbekende gangenstelsel. Maatwerk op het hoogste niveau.</p>
+                    <div class="card-price-v2">Vanaf €85 p.p. <span class="arrow">→</span></div>
+                </div>
+            </div>
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.card { background: #fff; padding: 30px; border-radius: 24px; transition: 0.3s; cursor: pointer; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.card-top { font-size: 11px; font-weight: 700; color: #86868b; text-transform: uppercase; margin-bottom: 15px; }
-.card h3 { font-size: 24px; margin-bottom: 10px; }
-.card p { color: #86868b; font-size: 15px; margin-bottom: 25px; }
-.card-price { border-top: 1px solid #f5f5f7; padding-top: 20px; font-weight: 700; display: flex; justify-content: space-between; }
+            <div class="event-card-v2 outdoor">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop" alt="Heuvelland">
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">20 - 100 PAX | Lifestyle</span>
+                    <h3>E-Chopper Heuveltour</h3>
+                    <p>Geruisloos door het Limburgse landschap met stops bij de beste lokale wijngaarden.</p>
+                    <div class="card-price-v2">Vanaf €65 p.p. <span class="arrow">→</span></div>
+                </div>
+            </div>
 
-@media (max-width: 768px) {
-    .hero h1 { font-size: 50px; letter-spacing: -2px; }
-    .menu { display: none; }
-}
-/* Extra voor Aanbod Pagina */
-.page-top { padding-top: 140px; }
-.bg-light { background: #f5f5f7; }
+            <div class="event-card-v2 indoor">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop" alt="Gala">
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">50 - 250 PAX | Events</span>
+                    <h3>Mergel Dinner Experience</h3>
+                    <p>Dineren aan lange tafels, verlicht door honderden kaarsen in een privé-grot.</p>
+                    <div class="card-price-v2">Vanaf €115 p.p. <span class="arrow">→</span></div>
+                </div>
+            </div>
 
-.page-header { margin-bottom: 60px; }
-.page-header h1 { font-size: 64px; font-weight: 900; letter-spacing: -3px; }
+        </div>
+    </main>
 
-.filter-section { 
-    display: flex; 
-    gap: 40px; 
-    margin-bottom: 40px; 
-    padding: 20px; 
-    background: #fff; 
-    border-radius: 20px;
-}
+    <script>
+        function filterType(type) {
+            const cards = document.querySelectorAll('.event-card-v2');
+            const pills = document.querySelectorAll('.pill');
+            
+            pills.forEach(p => p.classList.remove('active'));
+            event.currentTarget.classList.add('active');
 
-.filter-group { display: flex; flex-direction: column; gap: 10px; }
-.filter-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #86868b; }
-.pills { display: flex; gap: 8px; }
-
-/* Active state voor menu */
-.menu a.active { color: var(--accent); border-bottom: 2px solid #000; padding-bottom: 5px; }
+            cards.forEach(card => {
+                if (type === 'all' || card.classList.contains(type)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
